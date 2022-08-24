@@ -1,0 +1,63 @@
+#ไฟล์ .YAML ใช้เพื่อส่งออกระเบียน DNS ไปยังโดเมน
+#ซึ่งจัดการโดย Google Cloud รูปแบบนี้
+#ใช้กับ Google Cloud DNS โดยเฉพาะ
+
+---
+kind: dns#resourceRecordSet
+name: 'tkmens.com.'
+rrdatas:
+- '1 aspmx.l.google.com.'
+- '5 alt1.aspmx.l.google.com.'
+- '5 alt2.aspmx.l.google.com.'
+- '10 alt3.aspmx.l.google.com.'
+- '10 alt4.aspmx.l.google.com.'
+ttl: 3600
+type: MX
+---
+kind: dns#resourceRecordSet
+name: 'tkmens.com.'
+rrdatas:
+- '"v=spf1 include:_spf.google.com ~all"'
+ttl: 3600
+type: SPF
+---
+kind: dns#resourceRecordSet
+name: 'tkmens.com.'
+rrdatas:
+- '"v=spf1 include:_spf.google.com ~all"'
+ttl: 3600
+type: TXT
+---
+kind: dns#resourceRecordSet
+name: 'google._domainkey.tkmens.com.'
+rrdatas:
+- '"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAki2RbQcDZRGljFFYajcUSd4d8zZ5BLldnRP4zRnxFz9OBqa2ngZNoguq/PfnmfTkWPX6FlNiUYyE2JFRovH3xmqhger4dliOfoYV/ziIUOBX/flFUM0AOKAyMYV6VP3RZMUuQhGWmAGkg80VCvWUDENNwCXymvJKN64nNBktR3EvGj5c1JHSb9+Xv749H58v3" "kjyTETSbuR218dS0h+rRRUan0AngeSRnzQEJLkozXgr4dhDKEMuPi28LczeDpdBAaYDL1SxevYYpLOMu9iRLnndO1xs6XuL4WEHCb6CoUC0zjswjyJDYxMzjaSc4PCUJWFUZlSrF401/zJd7y7+GwIDAQAB"'
+ttl: 3600
+type: TXT
+---
+kind: dns#resourceRecordSet
+name: 'tkmens.com.'
+rrdatas:
+- '216.239.32.21'
+- '216.239.34.21'
+- '216.239.36.21'
+- '216.239.38.21'
+ttl: 3600
+type: A
+---
+kind: dns#resourceRecordSet
+name: 'tkmens.com.'
+rrdatas:
+- '2001:4860:4802:32::15'
+- '2001:4860:4802:34::15'
+- '2001:4860:4802:36::15'
+- '2001:4860:4802:38::15'
+ttl: 3600
+type: AAAA
+---
+kind: dns#resourceRecordSet
+name: 'www.tkmens.com.'
+rrdatas:
+- 'ghs.googlehosted.com.'
+ttl: 3600
+type: CNAME
